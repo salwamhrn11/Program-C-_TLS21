@@ -1,0 +1,53 @@
+//program menghitung diagonal ruang dan diagonal bidang pada kubus dan balok//
+
+#include <cmath>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   float bangun_ruang;
+   float panjang_sisi, panjang_balok, lebar_balok, tinggi_balok, diagonal_ruang_kubus, diagonal_bidang_kubus;
+   float diagonal_bidang_1, diagonal_bidang_2, diagonal_bidang_3;
+   
+   cout<<"\nMasukkan jenis bangun ruang yang diinginkan (ketik 1 apabila kubus dan ketik 0 apabila balok) : ";
+   cin>>bangun_ruang;
+   
+   if (bangun_ruang==1)
+   {
+       cout<<"\nMasukkan panjang sisi kubus tersebut = ";
+       cin>>panjang_sisi;
+       
+       diagonal_bidang_kubus=panjang_sisi*sqrt(2);
+       diagonal_ruang_kubus=panjang_sisi*sqrt(3);
+       
+       cout<<"\nPanjang diagonal bidang kubus tersebut adalah = "<<diagonal_bidang_kubus;
+       cout<<"\nPanjang diagonal ruang kubus tersebut adalah = "<<diagonal_ruang_kubus;
+   }   
+        
+        else if (bangun_ruang==0)
+        {
+            cout<<"\nMasukkan panjang balok = ";
+            cin>>panjang_balok;
+            cout<<"\nMasukkan lebar balok = ";
+            cin>>lebar_balok;
+            cout<<"\nMasukkan tinggi balok = ";
+            cin>>tinggi_balok;
+        
+            diagonal_bidang_1= sqrt (panjang_balok*panjang_balok + lebar_balok*lebar_balok);
+            diagonal_bidang_2= sqrt (panjang_balok*panjang_balok + tinggi_balok*tinggi_balok);
+            diagonal_bidang_3= sqrt (lebar_balok*lebar_balok + tinggi_balok*tinggi_balok);
+        
+            cout<<"\nPanjang diagonal bidang antara panjang balok dan lebar balok adalah = "<<diagonal_bidang_1;
+            cout<<"\nPanjang diagonal bidang antara panjang balok dan tinggi balok adalah = "<<diagonal_bidang_2;
+            cout<<"\nPanjang diagonal bidang antara lebar balok dan tinggi balok adalah = "<<diagonal_bidang_3;
+        }
+            
+            else
+            {
+                cout<<"\nMohon maaf bangun ruang yang anda masukkan tidak dapat digunakan pada program ini.";
+            }
+    
+    return 0;
+}
